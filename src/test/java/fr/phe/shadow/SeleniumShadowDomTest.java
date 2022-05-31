@@ -44,9 +44,9 @@ public class SeleniumShadowDomTest {
 	@Test
 	@Order(1)
 	public void checkDomContent() {
-		WebElement link = driver.findElement(By.cssSelector("a"));
+		WebElement content = driver.findElement(By.cssSelector("a"));
 		
-		Assertions.assertEquals("scroll.html", link.getText());
+		Assertions.assertEquals("scroll.html", content.getText());
 	}
 
     @Test
@@ -69,7 +69,7 @@ public class SeleniumShadowDomTest {
         if (!shadowInput.getText().isEmpty()) {
     		shadowInput.clear();
         }
-        String msg = "je remplis le text shadow";
+        String msg = "Fills input field with some text.";
         shadowInput.sendKeys(msg);
         
         Assertions.assertEquals(msg, shadowInput.getAttribute("value"));
